@@ -57,7 +57,7 @@ class InlineQueryResultArticle(InlineQueryResult):
     """
 
     __slots__ = [
-        "title", "input_message_content", "reply_markup", "url", "description", "thumb_url", "thumb_width",
+        "title", "photo_file_id", "input_message_content", "reply_markup", "url", "description", "thumb_url", "thumb_width",
         "thumb_height"
     ]
 
@@ -65,6 +65,7 @@ class InlineQueryResultArticle(InlineQueryResult):
         self,
         id: Any,
         title: str,
+        photo_file_id,
         input_message_content,
         reply_markup=None,
         url: str = None,
@@ -76,6 +77,7 @@ class InlineQueryResultArticle(InlineQueryResult):
         super().__init__("article", id)
 
         self.title = title
+        self.photo_file_id = photo_file_id
         self.input_message_content = input_message_content
         self.reply_markup = reply_markup
         self.url = url
@@ -88,6 +90,7 @@ class InlineQueryResultArticle(InlineQueryResult):
         return types.InputBotInlineResult(
             id=str(self.id),
             type=self.type,
+            photo_file_id=self.photo_file_id,
             send_message=self.input_message_content.write(self.reply_markup),
             title=self.title,
             description=self.description,
