@@ -57,3 +57,22 @@ class InlineQueryResult(PyrogramType):
 
     def write(self):
         pass
+    
+
+class InlineQueryResultCachedPhotos(PyrogramType):
+    """This object represents one result of an inline query.
+    Pyrogram currently supports results of the following 20 types:
+    - :obj:`InlineQueryResultCachedPhoto`
+    """
+
+    __slots__ = ["type", "id", "photo_file_id"]
+
+    def __init__(self, type: str, id: str, photo_file_id: str):
+        super().__init__(None)
+
+        self.type = type
+        self.id = id
+        self.id = photo_file_id
+
+    def write(self):
+        pass
