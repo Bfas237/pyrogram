@@ -19,7 +19,8 @@
 from .inline_query import InlineQuery
 from .inline_query_result import InlineQueryResult
 from .inline_query_result_article import InlineQueryResultArticle
+from .inline_query_result_cached_photo import InlineQueryResultCachedPhoto
 
 __all__ = [
-    "InlineQuery", "InlineQueryResult", "InlineQueryResultArticle"
+    "InlineQuery", "InlineQueryResult", "InlineQueryResultArticle", "InlineQueryResultCachedPhoto"
 ]
