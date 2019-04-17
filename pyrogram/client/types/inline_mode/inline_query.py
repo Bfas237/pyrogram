@@ -86,7 +86,7 @@ class InlineQuery(PyrogramType, Update):
 
     def answer(
         self,
-        results: List[InlineQueryResult],
+        results: List[InlineQueryResult, InlineQueryResultCachedPhotos],
         cache_time: int = 300,
         is_personal: bool = None,
         next_offset: str = "",
