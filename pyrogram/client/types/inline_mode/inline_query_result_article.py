@@ -74,7 +74,7 @@ class InlineQueryResultArticle(InlineQueryResult):
         thumb_width: int = 0,
         thumb_height: int = 0
     ):
-        super().__init__("article", id)
+        super().__init__("photo", id)
 
         self.title = title
         self.photo_file_id = photo_file_id
