@@ -21,7 +21,6 @@ from typing import List
 import pyrogram
 from pyrogram.api import types
 from .inline_query_result import InlineQueryResult
-from .inline_query_result import InlineQueryResultCachedPhotos
 from ..messages_and_media import Location
 from ..pyrogram_type import PyrogramType
 from ..update import Update
