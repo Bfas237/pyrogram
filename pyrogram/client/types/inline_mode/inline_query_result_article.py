@@ -57,14 +57,13 @@ class InlineQueryResultArticle(InlineQueryResult):
     """
 
     __slots__ = [
-        "title", "photo_file_id", "input_message_content", "reply_markup", "url", "description", "thumb_url", "thumb_width",
+        "photo_file_id", "input_message_content", "reply_markup", "url", "description", "thumb_url", "thumb_width",
         "thumb_height"
     ]
 
     def __init__(
         self,
         id: Any,
-        title: str,
         photo_file_id,
         input_message_content,
         reply_markup=None,
@@ -93,17 +92,5 @@ class InlineQueryResultArticle(InlineQueryResult):
             photo_file_id=self.photo_file_id,
             send_message=self.input_message_content.write(self.reply_markup),
             title=self.title,
-            description=self.description,
-            url=self.url,
-            thumb=types.InputWebDocument(
-                url=self.thumb_url,
-                size=0,
-                mime_type="image/jpeg",
-                attributes=[
-                    types.DocumentAttributeImageSize(
-                        w=self.thumb_width,
-                        h=self.thumb_height
-                    )
-                ]
-            ) if self.thumb_url else None
+            description=self.description
         )
